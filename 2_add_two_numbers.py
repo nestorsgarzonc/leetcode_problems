@@ -15,7 +15,6 @@ Runtime: 68 ms, faster than 91.80% of Python3 online submissions for Add Two Num
 Memory Usage: 13.7 MB, less than 94.33% of Python3 online submissions for Add Two Numbers.
 TODO: Refactor code :)
 """
-
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -36,8 +35,10 @@ class Solution:
         tempHead=head
         actual1=actual1.next
         actual2=actual2.next
-        while actual1 and actual2:
-            temp=actual1.val+actual2.val+valTemp
+        while actual1 or actual2:
+            val1=actual1.val if actual1 else 0
+            val2=actual2.val if actual2 else 0
+            temp=val1+val2+valTemp
             if temp>=10:
                 valTemp=temp//10
                 temp=temp%10
@@ -46,30 +47,8 @@ class Solution:
             nextNode=ListNode(temp)
             tempHead.next=nextNode
             tempHead=nextNode
-            actual1=actual1.next
-            actual2=actual2.next
-        while actual1:
-            temp=valTemp+actual1.val
-            if temp>=10:
-                valTemp=temp//10
-                temp=temp%10
-            else:
-                valTemp=0
-            nextNode=ListNode(temp)
-            tempHead.next=nextNode
-            tempHead=nextNode
-            actual1=actual1.next
-        while actual2:
-            temp=valTemp+actual2.val
-            if temp>=10:
-                valTemp=temp//10
-                temp=temp%10
-            else:
-                valTemp=0
-            nextNode=ListNode(temp)
-            tempHead.next=nextNode
-            tempHead=nextNode
-            actual2=actual2.next
+            actual1=actual1.next if actual1 else None
+            actual2=actual2.next if actual2 else None
         if valTemp!=0:
             nextNode=ListNode(valTemp)
             tempHead.next=nextNode
