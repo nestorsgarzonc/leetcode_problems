@@ -20,7 +20,7 @@ Memory Usage: 14 MB, less than 34.65% of Python3 online submissions for Longest 
 """
 
 class Solution:
-    def longestPalindrome(self, s: str) -> str:
+    def longestPalindrome(self, s: str) -> çstr:
         if s==s[::-1]:
             return s
         lonSub=''
