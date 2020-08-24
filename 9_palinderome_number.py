@@ -22,16 +22,14 @@ Coud you solve it without converting the integer to a string?
 # O(log10(n))
 
 """
-Runtime: 68 ms, faster than 64.51% of Python3 online submissions for Palindrome Number.
-Memory Usage: 13.8 MB, less than 66.28% of Python3 online submissions for Palindrome Number.
-Next challenges:
+Runtime: 60 ms, faster than 81.32% of Python3 online submissions for Palindrome Number.
+Memory Usage: 13.9 MB, less than 41.89% of Python3 online submissions for Palindrome Number.
 """
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
             return False
         tempNum = x
-        tempN = []
         myNum = 0
         while tempNum > 0:
             myNum = myNum*10 + (tempNum % 10)
