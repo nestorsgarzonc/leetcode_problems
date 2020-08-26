@@ -25,6 +25,8 @@ Coud you solve it without converting the integer to a string?
 Runtime: 60 ms, faster than 81.32% of Python3 online submissions for Palindrome Number.
 Memory Usage: 13.9 MB, less than 41.89% of Python3 online submissions for Palindrome Number.
 """
+
+
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
