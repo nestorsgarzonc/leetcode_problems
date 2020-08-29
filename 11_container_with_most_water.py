@@ -15,16 +15,19 @@ Output: 49
 Runtime: 124 ms, faster than 93.68% of Python3 online submissions for Container With Most Water.
 Memory Usage: 15.3 MB, less than 87.15% of Python3 online submissions for Container With Most Water.
 """
-#Best solution
+# Best solution O(n)
+
+
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        maxArea=0
-        leftPoint=0
-        rightPoint=len(height)-1
-        while leftPoint!=rightPoint:
-            maxArea=max(maxArea, (rightPoint-leftPoint)*min(height[leftPoint],height[rightPoint]))
-            if height[leftPoint]>height[rightPoint]:
-                rightPoint-=1
+        maxArea = 0
+        leftPoint = 0
+        rightPoint = len(height)-1
+        while leftPoint != rightPoint:
+            maxArea = max(maxArea, (rightPoint-leftPoint) *
+                          min(height[leftPoint], height[rightPoint]))
+            if height[leftPoint] > height[rightPoint]:
+                rightPoint -= 1
             else:
-                leftPoint+=1
+                leftPoint += 1
         return maxArea
